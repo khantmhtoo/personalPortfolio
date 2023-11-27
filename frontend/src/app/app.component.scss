@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.main {
+  width: calc(100% - 10rem);
+}
