@@ -4,22 +4,46 @@
   height: 50px;
   margin-bottom: 39px;
 }
+.phone-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
 .nav {
+  width: 23rem;
+  height: 40rem;
+  border: 2px solid black;
+  padding-block: 3rem;
+  background-image: url('../../../../assets/pokemonwp.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    &-list {
+  &-list {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
 
-    }
+  &-item {
+    list-style: none;
+    margin: auto;
+  }
 
-    &-item {
-        text-decoration: none;
-        list-style: none;
-        width: 50px;
-        height: 50px;
-        margin-bottom: 2rem;
-        background-color: green;
-    }
+  &-link {
+    text-decoration: none;
+  }
 
-    &-link {
-        
-    }
+  &-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.menu {
+  cursor: pointer;
+  color:red;
 }

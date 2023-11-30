@@ -1,28 +1,23 @@
-<!-- <p>navbar works!</p> -->
-<div>
-  <nav class="nav" *ngIf="menuState">
+<div class="container" (click)="onTrigger()">
+  <div class="menu"></div>
+</div>
+
+<div class="phone-container" *ngIf="menuState">
+  <nav class="nav">
     <ul class="nav-list">
-      <li class="nav-item">
-        <a class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Resume</a>
+      <li class="nav-item" *ngFor="let item of navItems">
+        <a
+          [routerLink]="item.routePathName"
+          class="nav-link"
+          alt="item.routePathName"
+        >
+          <img
+            class="nav-img"
+            src="{{ item.iconPath }}"
+            alt="{{ item.routePathName }}"
+          />
+        </a>
       </li>
     </ul>
   </nav>
-</div>
-<div class="container" (click)="onTrigger()">
-  <div class="menu"></div>
 </div>

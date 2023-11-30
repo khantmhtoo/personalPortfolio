@@ -9,6 +9,11 @@ import { ResumeComponent } from '../components/resume/resume.component';
 export const APP_ROUTES: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {
@@ -17,17 +22,18 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
   },
   {
     path: 'projects',
-    component: ProjectsComponent
-  },  {
+    component: ProjectsComponent,
+  },
+  {
     path: 'skills',
-    component: SkillsComponent
-  }
-  ,  {
+    component: SkillsComponent,
+  },
+  {
     path: 'resume',
-    component: ResumeComponent
-  }
+    component: ResumeComponent,
+  },
 ];
