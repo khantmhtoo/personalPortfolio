@@ -1,0 +1,130 @@
+@import "../../../cores/styles/style.template.scss";
+
+.container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  .nav {
+    display: none;
+
+    &-list {
+      list-style: none;
+    }
+  }
+
+  .arrow {
+    background-color: $darkmode-bgp;
+    width: 30px;
+    position: absolute;
+    height: 4px;
+    left: 6px;
+    top: 40px;
+    border-radius: 0 0 25px 25px;
+    transition: all ease-in-out 0.2s;
+  }
+
+  .menu {
+    background-color: $darkmode-bgp;
+    top: 16px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    position: absolute;
+    transition: all ease-in-out 0.2s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 80%;
+      height: inherit;
+      border-radius: inherit;
+      transition: all ease-in-out 0.2s;
+      background-color: black;
+    }
+
+    &::after {
+      transform: translateY(13px);
+      background-color: inherit;
+    }
+
+    &::before {
+      transform: translate(8px, -13px);
+      background-color: inherit;
+    }
+  }
+}
+
+.container.active {
+  .arrow {
+    top: 244px;
+  }
+  .nav {
+    margin-top: 10px;
+    display: block;
+    position: absolute;
+    top: 39px;
+    left: 1px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &-item {
+      width: 40px;
+      height: 40px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .menu {
+    background-color: transparent;
+
+    &::after {
+      width: 100%;
+      transform-origin: left;
+      transform: translate(34px, 14px) rotate(-135deg);
+      background-color: $darkmode-bgp;
+    }
+
+    &::before {
+      width: 100%;
+      transform: translateY(0) rotate(-45deg);
+      background-color: $darkmode-bgp;
+    }
+  }
+}
+.container.lightMode {
+  .menu {
+    background-color: $lightmode-bgp;
+  }
+
+  .arrow {
+    background-color: $lightmode-bgp;
+  }
+}
+.container.active.lightMode {
+  .menu {
+    background-color: transparent;
+
+    &::after {
+      background-color: $lightmode-bgp;
+    }
+
+    &::before {
+      background-color: $lightmode-bgp;
+    }
+  }
+}

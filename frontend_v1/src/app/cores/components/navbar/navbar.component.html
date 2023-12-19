@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<div
+  class="container"
+  [ngClass]="{ active: isActiveMenu, lightMode: currTheme }"
+>
+  <nav class="nav">
+    <ul class="nav-list">
+      @for(item of navList; track item.alt) {
+      <li class="nav-item">
+        <!-- Implement the actual routing system -->
+        <a class="nav-link"
+          ><img src="{{ item.path }}" alt="{{ item.alt }}" class="nav-img"
+        /></a>
+      </li>
+      }
+    </ul>
+  </nav>
+  <div (click)="onActiveMenu()">
+    <span class="menu"></span>
+    <span class="arrow"></span>
+  </div>
+</div>

@@ -1,6 +1,7 @@
-<div class="nav">
-  <app-navbar></app-navbar>
-</div>
-<div class="content">
+<app-navbar></app-navbar>
+<div
+  class="container"
+  [ngClass]="{ lightMode: themeDark?.theme?.currThemeDark }"
+>
   <router-outlet></router-outlet>
 </div>
