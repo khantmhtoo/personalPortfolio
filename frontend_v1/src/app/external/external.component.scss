@@ -2,14 +2,24 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  border: 2px solid transparent;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 .container.lightMode {
   background-color: white;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 }

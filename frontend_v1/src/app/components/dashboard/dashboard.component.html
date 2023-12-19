@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<div class="container">
+  <h1>Hello, I'm Khant</h1>
+  @for(skill of skillRotate; track skill.id) {
+  <span
+    [style.opacity]="skill.id === currentIndex ? 1 : 0"
+    [style.transition]="animationDuration + 's ease-in-out'"
+    class="highlight"
+    >{{ skill.skill | titlecase }}</span
+  >
+  }
+</div>
+<div>
+  <span>Linkedin</span>
+  <span>github</span>
+  <span>mail</span>
+</div>
+<hr>
+<!-- Do projects -->

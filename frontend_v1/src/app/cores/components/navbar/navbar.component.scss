@@ -9,6 +9,13 @@
   cursor: pointer;
   border-radius: 5px;
 
+  .contains {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+
   .nav {
     display: none;
 
