@@ -1,7 +1,11 @@
+.hero {
+  margin-bottom: 0.5rem;
+  min-height: 12rem;
+}
 .container {
   position: relative;
-  background-color: red;
   width: 100%;
+  margin-bottom: 4rem;
 }
 .highlight {
   position: absolute;
@@ -22,5 +26,65 @@
       rgba(80, 195, 114, 1) 45%,
       rgba(26, 180, 212, 1) 100%
     );
+  }
+}
+.icon {
+  font-size: 2rem;
+}
+.link-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+  span {
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    width: 10rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid;
+    transition: ease-in-out all 0.2s;
+    font-weight: bold;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+.link-container.lightMode {
+  span {
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  .blog {
+    margin-block: 1rem;
+    border-radius: 5px;
+    height: 23rem;
+    width: 20.5rem;
+    border: 1px solid;
+
+    &-img {
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+    }
+
+    &-content {
+      margin: 0.5rem 1rem;
+    }
+
+    &-title {
+      margin-bottom: 0.5rem;
+    }
   }
 }

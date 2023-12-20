@@ -1,16 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faUnity,
+  faLinkedin,
+  faGithub,
+  faHtml5,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { interval } from 'rxjs';
+import { ThemeService } from '../../cores/services/theme.service';
+import { MTheme } from '../../cores/models/theme.models';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  skillRotate = [
+  public skillRotate = [
     {
       id: 1,
       skill: 'frontend developer',
@@ -28,15 +38,31 @@ export class DashboardComponent {
       skill: 'game developer',
     },
   ];
-  currentIndex = 1;
-  animationDuration = 1; // Change this to adjust animation speed
-
+  public currentIndex = 1;
+  public animationDuration = 1; // Change this to adjust animation speed
   private slideChange$ = interval(2000); // Change this to adjust slide interval
+
+  // Icons Manager
+  faUnity = faUnity;
+  faLinkedin = faLinkedin;
+  faGithub = faGithub;
+  faHtml5 = faHtml5;
+  faEnve = faEnvelope;
+
+  // Injection
+  _theme = inject(ThemeService);
+  _cdr = inject(ChangeDetectorRef);
+  currThemeDark!: any;
 
   ngOnInit(): void {
     this.slideChange$.subscribe(() => {
       this.currentIndex =
         (this.currentIndex + 1) % (this.skillRotate.length + 1);
+    });
+
+    this._theme.$currThemeDark.subscribe((data: MTheme) => {
+      this.currThemeDark = data.theme.currThemeDark;
+      this._cdr.detectChanges();
     });
   }
 }

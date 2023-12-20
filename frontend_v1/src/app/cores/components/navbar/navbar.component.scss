@@ -8,7 +8,7 @@
   height: 40px;
   cursor: pointer;
   border-radius: 5px;
-
+  z-index: 999;
   .contains {
     background-color: transparent;
     width: 40px;
@@ -26,13 +26,22 @@
 
   .arrow {
     background-color: $darkmode-bgp;
-    width: 30px;
     position: absolute;
-    height: 4px;
-    left: 6px;
-    top: 40px;
-    border-radius: 0 0 25px 25px;
     transition: all ease-in-out 0.2s;
+
+    // For drop down
+    // border-radius: 0 0 25px 25px;
+    // height: 4px;
+    // width: 30px;
+    // left: 6px;
+    // top: 40px;
+    // margin-top: 5px;
+    height: 30px;
+    border-radius: 0 25px 25px 0;
+    width: 4px;
+    left: 40px;
+    top: 6px;
+    margin-left: 5px;
   }
 
   .menu {
@@ -70,18 +79,24 @@
 
 .container.active {
   .arrow {
-    top: 244px;
+    // top: 244px;
+    left: 244px;
   }
   .nav {
-    margin-top: 10px;
+    // For drop down
+    // margin-top: 10px;
+    // top: 39px;
+    // left: 1px;
+
+    margin-left: 10px;
+    top: 0;
+    left: 39px;
     display: block;
     position: absolute;
-    top: 39px;
-    left: 1px;
 
     &-list {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 10px;
     }
 
