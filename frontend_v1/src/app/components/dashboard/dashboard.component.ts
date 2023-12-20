@@ -2,10 +2,19 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
-  faUnity,
   faLinkedin,
   faGithub,
+  faUnity,
   faHtml5,
+  faCss3,
+  faJs,
+  faNodeJs,
+  faReact,
+  faAngular,
+  faPhp,
+  faLaravel,
+  faDocker,
+
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { interval } from 'rxjs';
@@ -42,12 +51,17 @@ export class DashboardComponent {
   public animationDuration = 1; // Change this to adjust animation speed
   private slideChange$ = interval(2000); // Change this to adjust slide interval
 
-  // Icons Manager
-  faUnity = faUnity;
+  // Icons Manager - Socials
   faLinkedin = faLinkedin;
   faGithub = faGithub;
-  faHtml5 = faHtml5;
   faEnve = faEnvelope;
+
+  // Icons Manager - Tech
+  faUnity = faUnity;
+  faHtml5 = faHtml5;
+  faCss = faCss3;
+  techStack = [faUnity,]
+  
 
   // Injection
   _theme = inject(ThemeService);
