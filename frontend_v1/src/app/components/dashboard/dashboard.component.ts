@@ -14,7 +14,6 @@ import {
   faPhp,
   faLaravel,
   faDocker,
-
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { interval } from 'rxjs';
@@ -60,8 +59,26 @@ export class DashboardComponent {
   faUnity = faUnity;
   faHtml5 = faHtml5;
   faCss = faCss3;
-  techStack = [faUnity,]
-  
+  faJs = faJs;
+  faNodeJs = faNodeJs;
+  faReact = faReact;
+  faAngular = faAngular;
+  faPhp = faPhp;
+  faLaravel = faLaravel;
+  faDocker = faDocker;
+
+  techStack = [
+    faHtml5,
+    faCss3,
+    faJs,
+    faNodeJs,
+    faAngular,
+    faReact,
+    faPhp,
+    faLaravel,
+    faUnity,
+    faDocker,
+  ];
 
   // Injection
   _theme = inject(ThemeService);

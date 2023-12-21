@@ -65,14 +65,23 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus a, tempore
       possimus iure ipsam et minima quia sunt voluptate.
     </p>
+    <!-- Tech Stack -->
+    <ul>
+      <li></li>
+    </ul>
   </div>
 </div>
 
-<hr>
+<hr />
 <!-- Tech stack card with just the tech icon and tech name -->
-<div class="tech-container">
-  <div class="tech">
-    <span class="tech-item"><fa-icon class="tech-icon" [icon]="faEnve"></fa-icon></span>
+<div>
+  <h2>Tech Stack</h2>
+  <div class="tech" [ngClass]="{ lightMode: currThemeDark }">
+    @for(tech of techStack; track tech) {
+    <span class="tech-item">
+      <fa-icon class="tech-icon" [icon]="tech"></fa-icon>
+    </span>
+    }
   </div>
 </div>
 <!-- resume link or resume design -->

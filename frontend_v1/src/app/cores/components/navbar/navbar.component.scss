@@ -1,14 +1,14 @@
 @import "../../../cores/styles/style.template.scss";
 
 .container {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: sticky;
+  padding: 1rem;
   width: 40px;
   height: 40px;
   cursor: pointer;
   border-radius: 5px;
   z-index: 999;
+
   .contains {
     background-color: transparent;
     width: 40px;
@@ -89,8 +89,8 @@
     // left: 1px;
 
     margin-left: 10px;
-    top: 0;
-    left: 39px;
+    top: 1rem;
+    left: 56px;
     display: block;
     position: absolute;
 
