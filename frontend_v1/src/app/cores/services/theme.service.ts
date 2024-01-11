@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { MTheme } from '../models/theme.models';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { createSignal } from '@angular/core/primitives/signals';
 
 @Injectable({
   providedIn: 'platform',
@@ -11,6 +12,10 @@ export class ThemeService {
   private currThemeDarkBS = new BehaviorSubject<MTheme>(this.currThemeDark);
   public $currThemeDark = this.currThemeDarkBS.asObservable();
 
+  public signalThemeDark = toSignal(this.currThemeDarkBS, {
+    initialValue: new MTheme(),
+  });
+
   prevTheme(theme: boolean) {
     this.currThemeDark.prevTheme(theme);
     this.currThemeDarkBS.next(this.currThemeDark);
@@ -19,9 +24,12 @@ export class ThemeService {
   changeTheme() {
     this.currThemeDark.updateTheme();
     this.currThemeDarkBS.next(this.currThemeDark);
-    localStorage.setItem(
-      'currThemeDark',
-      JSON.stringify(this.currThemeDark.theme.currThemeDark)
-    );
+
+    setTimeout(() => {
+      localStorage.setItem(
+        'currThemeDark',
+        JSON.stringify(this.currThemeDark.theme.currThemeDark)
+      );
+    }, 0);
   }
 }

@@ -1,6 +1,9 @@
 <div
   class="container"
-  [ngClass]="{ active: isActiveMenu, lightMode: currTheme }"
+  [ngClass]="{
+    active: isActiveMenu,
+    lightMode: currThemeDark.theme.currThemeDark
+  }"
 >
   <nav class="nav">
     <ul class="nav-list">
@@ -8,14 +11,20 @@
       <li class="nav-item">
         <!-- Implement the actual routing system -->
         <a class="nav-link"
-          ><img src="{{ item.path }}" alt="{{ item.alt }}" class="nav-img"
-        /></a>
+          ><img src="{{ item.path }}" alt="{{ item.alt }}" class="nav-img" />
+          <span class="nav-item-name">{{ item.alt | titlecase }}</span></a
+        >
       </li>
       }
+
+      <div class="screen"></div>
+      <div class="camera"></div>
+      <div class="speaker"></div>
+      <div class="home-button"></div>
     </ul>
   </nav>
-  <div class="contains" (click)="onActiveMenu()">
+
+  <div class="menu-container" (click)="onActiveMenu()">
     <span class="menu"></span>
-    <span class="arrow"></span>
   </div>
 </div>

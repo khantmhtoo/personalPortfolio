@@ -12,16 +12,10 @@ import { MTheme } from '../cores/models/theme.models';
 })
 export class ExternalComponent {
   _theme = inject(ThemeService);
-  currThemeDark?: MTheme;
+  currThemeDark: MTheme = this._theme.signalThemeDark();
 
-  constructor() {
-    this._theme.$currThemeDark.subscribe((data: MTheme) => {
-      this.currThemeDark = data;
-    });
-  }
 
   updateTheme() {
     this._theme.changeTheme();
-    console.log(this.currThemeDark)
   }
 }

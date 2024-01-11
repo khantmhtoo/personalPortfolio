@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './bloglist.component.scss'
 })
 export class BloglistComponent {
-
+  onClick() {
+    console.log("Clicked on blog")
+  }
 }

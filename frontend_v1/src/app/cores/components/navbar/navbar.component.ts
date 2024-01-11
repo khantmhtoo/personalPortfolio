@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import { MTheme } from '../../models/theme.models';
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +10,13 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   _theme = inject(ThemeService);
   _cdr = inject(ChangeDetectorRef);
 
-  public currTheme: any;
+  public currThemeDark: MTheme = this._theme.signalThemeDark();
   public isActiveMenu: boolean = false;
+
   public navList: any = [
     { path: '../../../../assets/navIcons/HomeAppIcon.png', alt: 'home' },
     { path: '../../../../assets/navIcons/ProjectAppIcon.png', alt: 'project' },
@@ -22,14 +24,7 @@ export class NavbarComponent implements OnInit {
     { path: '../../../../assets/navIcons/ContactAppIcon.png', alt: 'contact' },
   ];
 
-  ngOnInit() {
-    this._theme.$currThemeDark.subscribe((data: any) => {
-      this.currTheme = data.theme.currThemeDark;
-      this._cdr.detectChanges();
-    });
-  }
-
-  public onActiveMenu() {
+  public onActiveMenu(): void {
     this.isActiveMenu = !this.isActiveMenu;
   }
 }

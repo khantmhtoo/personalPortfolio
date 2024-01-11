@@ -1,81 +1,23 @@
-<div class="hero">
-  <div class="container">
-    <h1>Hello, I'm Khant</h1>
-    @for(skill of skillRotate; track skill.id) {
-    <span
-      [style.opacity]="skill.id === currentIndex ? 1 : 0"
-      [style.transition]="animationDuration + 's ease-in-out'"
-      class="highlight"
-      >{{ skill.skill | titlecase }}</span
-    >
+
+<app-hero></app-hero>
+<hr>
+<app-bloglist></app-bloglist>
+<hr>
+<app-projectlist></app-projectlist>
+<hr>
+
+
+<!-- Tech stack card with just the tech icon and tech name -->
+<!-- <div>
+  <h2>Tech Stack</h2>
+  <div class="tech" [ngClass]="{ lightMode: currThemeDark }">
+    @for(tech of techStack; track tech) {
+    <span class="tech-item">
+      <fa-icon class="tech-icon" [icon]="tech"></fa-icon>
+    </span>
     }
   </div>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus est quam
-    quisquam inventore. Officiis, accusamus eum autem vero facilis mollitia
-    libero consequuntur temporibus deserunt delectus sint dolorem veritatis,
-    quos nihil.
-  </p>
-</div>
-<div class="link-container" [ngClass]="{ lightMode: currThemeDark }">
-  <span><fa-icon class="icon" [icon]="faLinkedin"></fa-icon> Linkedin</span>
-  <span><fa-icon class="icon" [icon]="faGithub"></fa-icon> Github</span>
-  <span><fa-icon class="icon" [icon]="faEnve"></fa-icon> Mail</span>
-</div>
-<hr />
-
-<!-- Do blog - simple blog with similar setup to projects-->
-<div class="blog-container">
-  <div class="blog">
-    <img
-      class="blog-img"
-      src="https://placekitten.com/400/200"
-      alt="Blog Image"
-    />
-    <div class="blog-content">
-      <h2 class="blog-title">Sample Blog Post</h2>
-      <p class="blog-summary">
-        This is a short summary of the blog post. It can contain a brief
-        description of the content.
-      </p>
-    </div>
-  </div>
-  <div class="blog">
-    <img
-      class="blog-img"
-      src="https://placekitten.com/400/200"
-      alt="Blog Image"
-    />
-    <div class="blog-content">
-      <h2 class="blog-title">Sample Blog Post</h2>
-      <p class="blog-summary">
-        This is a short summary of the blog post. It can contain a brief
-        description of the content.
-      </p>
-    </div>
-  </div>
-</div>
-
-<hr />
-<!-- do projects - simple card with title and summary with tech list maybe a hover effect on project small design -->
-<div class="project-container">
-  <div class="project">
-    <h2 class="project-title">Project title</h2>
-    <p class="project-summary">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus a, tempore
-      possimus iure ipsam et minima quia sunt voluptate.
-    </p>
-  </div>
-</div>
-
-<hr>
-<!-- Tech stack card with just the tech icon and tech name -->
-<div class="tech-container">
-  <div class="tech">
-    <span class="tech-item"><fa-icon class="tech-icon" [icon]="faEnve"></fa-icon></span>
-  </div>
-</div>
+</div> -->
 <!-- resume link or resume design -->
 
-<!-- <fa-icon class="icon" [icon]="faUnity"></fa-icon>
-<fa-icon class="icon" [icon]="faHtml5"></fa-icon> -->
+
