@@ -1,11 +1,11 @@
-<div class="nav-container">
-  <app-navbar></app-navbar>
-</div>
 <div
-  class="layout-container"
-  [ngClass]="{ lightMode: themeDark?.theme?.currThemeDark }"
+  class="main-container"
+  [ngClass]="{ lightMode: currThemeDark?.theme?.currThemeDark }"
 >
-  <div class="container">
+  <div class="nav-container">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="content-container">
     <router-outlet></router-outlet>
   </div>
 </div>

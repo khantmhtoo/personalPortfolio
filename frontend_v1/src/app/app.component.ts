@@ -10,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './cores/components/navbar/navbar.component';
 import { ThemeService } from './cores/services/theme.service';
 import { MTheme } from './cores/models/theme.models';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -21,20 +22,31 @@ import { MTheme } from './cores/models/theme.models';
 export class AppComponent implements OnInit, OnDestroy {
   _theme = inject(ThemeService);
   _cdr = inject(ChangeDetectorRef);
-  themeDark?: any;
 
-  ngOnInit() {
+  currThemeDark?: MTheme;
+  currThemeDarkSubs!: Subscription;
+
+  private checkThemeInLocalStorage(){
     const storedTheme = localStorage.getItem('currThemeDark');
     if (storedTheme) {
       let parseTheme = JSON.parse(storedTheme) === true ? true : false;
       this._theme.prevTheme(parseTheme);
     }
-
-    this._theme.$currThemeDark.subscribe((data: MTheme) => {
-      this.themeDark = data;
-      this._cdr.detectChanges();
-    });
   }
 
-  ngOnDestroy() {}
+  ngOnInit() {
+    this.checkThemeInLocalStorage();
+    this.currThemeDarkSubs = this._theme.$currThemeDark.subscribe(
+      (data: MTheme) => {
+        this.currThemeDark = data;
+        this._cdr.detectChanges();
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.currThemeDarkSubs) {
+      this.currThemeDarkSubs.unsubscribe();
+    }
+  }
 }

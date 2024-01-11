@@ -66,7 +66,6 @@ export class DashboardComponent {
   faPhp = faPhp;
   faLaravel = faLaravel;
   faDocker = faDocker;
-
   techStack = [
     faHtml5,
     faCss3,
@@ -83,7 +82,7 @@ export class DashboardComponent {
   // Injection
   _theme = inject(ThemeService);
   _cdr = inject(ChangeDetectorRef);
-  currThemeDark!: any;
+  currThemeDark: any = this._theme.signalThemeDark;
 
   ngOnInit(): void {
     this.slideChange$.subscribe(() => {
@@ -91,9 +90,10 @@ export class DashboardComponent {
         (this.currentIndex + 1) % (this.skillRotate.length + 1);
     });
 
-    this._theme.$currThemeDark.subscribe((data: MTheme) => {
-      this.currThemeDark = data.theme.currThemeDark;
-      this._cdr.detectChanges();
-    });
+    // this._theme.$currThemeDark.subscribe((data: MTheme) => {
+    //   this.currThemeDark = data.theme.currThemeDark;
+    //   this._cdr.detectChanges();
+    // });
+    console.log(this.currThemeDark)
   }
 }

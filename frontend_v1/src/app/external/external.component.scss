@@ -1,5 +1,7 @@
+@import "../../app/cores/styles/style.template.scss";
+
 .container {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 1rem;
   border: 2px solid transparent;
@@ -11,13 +13,14 @@
   border-radius: 50%;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
+  z-index: 999;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
 }
 .container.lightMode {
-  background-color: white;
+  background-color: $darkmode-bgp;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);

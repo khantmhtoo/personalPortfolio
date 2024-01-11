@@ -1,28 +1,22 @@
-.nav-container {
-  padding: 0;
-  width: 0;
-  height: 0;
-}
-.layout-container {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import "./cores/styles/style.template.scss";
+
+.main-container {
   background-color: black;
-  color: white;
-}
-.container {
-  min-height: 100vh;
-  max-height: 100%;
+  color: #fff;
   width: 100%;
-  padding: 5rem 1rem;
+  height: 100rem;
 }
-.layout-container.lightMode {
+
+.main-container.lightMode {
   background-color: white;
-  color: black;
+  color: #000;
 }
-@media screen and (min-width: 700px) {
-  .container {
-    width: 700px;
-  }
+.nav-container {
+  z-index: 999;
+  width: 100%;
+}
+.content-container {
+  padding-top: 3rem;
+  margin-inline: 1rem;
+  margin-bottom: 72px;
 }

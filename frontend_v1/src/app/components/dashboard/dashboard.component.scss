@@ -115,6 +115,10 @@
     border: 1px solid;
     position: relative;
 
+    &:hover {
+      background-color: red;
+    }
+
     &::after,
     &::before {
       position: absolute;
@@ -145,9 +149,7 @@
   .tech {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-// .tech {
+  // .tech {
 //   display: grid;
 //   grid-template-columns: repeat(3, 1fr);
 //   margin-block: 1rem;
@@ -197,3 +199,5 @@
 //     z-index: 100;
 //   }
 // }
+
+}
