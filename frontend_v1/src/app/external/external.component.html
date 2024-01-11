@@ -1,11 +1,20 @@
 <div
-  class="container"
-  (click)="updateTheme()"
-  [ngClass]="{ lightMode: !currThemeDark?.theme?.currThemeDark }"
+  class="container-control"
+  [ngStyle]="
+    currThemeDark.theme.currThemeDark
+      ? { 'background-color': 'white' }
+      : { 'background-color': 'black' }
+  "
 >
-  @if(currThemeDark?.theme?.currThemeDark) {
-  <i class="pi pi-sun" style="font-size: 30px"></i>
-  } @else {
-  <i class="pi pi-moon" style="font-size: 30px"></i>
-  }
+  <div
+    class="container"
+    (click)="updateTheme()"
+    [ngClass]="{ lightMode: !currThemeDark?.theme?.currThemeDark }"
+  >
+    @if(currThemeDark?.theme?.currThemeDark) {
+    <i class="pi pi-sun" style="font-size: 30px"></i>
+    } @else {
+    <i class="pi pi-moon" style="font-size: 30px"></i>
+    }
+  </div>
 </div>

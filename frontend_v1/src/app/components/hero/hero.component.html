@@ -1,0 +1,37 @@
+<div class="hero">
+  <div class="hero-container">
+    <h1 class="hero-intro">Hello, I'm Khant</h1>
+    <div class="hero-rotate-container">
+      @for(skill of skillRotate; track skill.id) {
+      <span
+        [style.opacity]="skill.id === currentIndex ? 1 : 0"
+        [style.transition]="animationDuration + 's ease-in-out'"
+        class="hero-rotate-container-item"
+        >{{ skill.skill | titlecase }}</span
+      >
+      }
+    </div>
+    <p>
+      Greetings! Khant in the house—full-stack developer with 2 years of web
+      wizardry using Angular, PrimeNG, Node.js, and MongoDB. Let's craft
+      something awesome together!
+    </p>
+  </div>
+  <div
+    class="hero-link"
+    [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+  >
+    <a
+      href="https://www.linkedin.com/in/khant-min-htoo-771a0b161/"
+      target="_blank"
+      class="hero-link-a"
+      ><fa-icon class="icon" [icon]="faLinkedin"></fa-icon> Linkedin</a
+    >
+    <a href="https://github.com/khantmhtoo" target="_blank" class="hero-link-a"
+      ><fa-icon class="icon" [icon]="faGithub"></fa-icon>Github</a
+    >
+    <a href="mailto:khantmhtoo1294@gmail.com" class="hero-link-a"
+      ><fa-icon class="icon" [icon]="faEnve"></fa-icon> Mail</a
+    >
+  </div>
+</div>

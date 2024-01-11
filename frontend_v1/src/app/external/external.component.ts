@@ -14,6 +14,7 @@ export class ExternalComponent {
   _theme = inject(ThemeService);
   currThemeDark: MTheme = this._theme.signalThemeDark();
 
+
   updateTheme() {
     this._theme.changeTheme();
   }

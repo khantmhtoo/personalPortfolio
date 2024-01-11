@@ -1,22 +1,33 @@
-@import "./cores/styles/style.template.scss";
-
 .main-container {
   background-color: black;
   color: #fff;
   width: 100%;
   height: 100rem;
 }
-
 .main-container.lightMode {
   background-color: white;
   color: #000;
 }
 .nav-container {
-  z-index: 999;
   width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 100;
+  background-color: inherit;
 }
 .content-container {
-  padding-top: 3rem;
   margin-inline: 1rem;
   margin-bottom: 72px;
+  padding-top: 5rem;
+}
+@media screen and (min-width: 700px) {
+  .nav-container {
+    width: 0;
+    height: 0;
+  }
+  .content-container {
+    width: 40rem;
+    margin-inline: auto;
+    display: flex;
+  }
 }

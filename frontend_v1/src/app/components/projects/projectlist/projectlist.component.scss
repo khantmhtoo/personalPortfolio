@@ -1,0 +1,12 @@
+.project-container {
+  margin-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  .project {
+    border-radius: 5px;
+    height: 15rem;
+    width: 20.5rem;
+    border: 1px solid;
+  }
+}

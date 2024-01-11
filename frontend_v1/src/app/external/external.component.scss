@@ -1,5 +1,3 @@
-@import "../../app/cores/styles/style.template.scss";
-
 .container {
   position: fixed;
   bottom: 1rem;
@@ -20,9 +18,24 @@
   }
 }
 .container.lightMode {
-  background-color: $darkmode-bgp;
+  background-color: #fff;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.container-control {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
+@media screen and (min-width: 700px) {
+  .container-control {
+    width: 0;
+    height: 0;
   }
 }

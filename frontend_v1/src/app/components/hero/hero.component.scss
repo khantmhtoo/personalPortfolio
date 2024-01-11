@@ -1,0 +1,70 @@
+.hero {
+  &-container {
+    p {
+      margin-bottom: 0.875rem;
+    }
+  }
+
+  &-intro {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 18rem;
+      height: 5px;
+      bottom: -5px;
+      top: 4.325rem;
+      background: linear-gradient(
+        90deg,
+        rgba(168, 0, 172, 1) 0%,
+        rgba(80, 195, 114, 1) 45%,
+        rgba(26, 180, 212, 1) 100%
+      );
+    }
+  }
+
+  &-rotate-container {
+    position: relative;
+    margin-bottom: 3.875rem;
+    &-item {
+      position: absolute;
+      font-size: 2.125rem;
+    }
+  }
+
+  &-link {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    &-a {
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      width: 10rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid;
+      transition: ease-in-out all 0.2s;
+      font-weight: bold;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+  .icon {
+    font-size: 2rem;
+  }
+}
+.hero-link.lightMode {
+  &-a {
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
