@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import {  Component} from '@angular/core';
 import { HeroComponent } from '../hero/hero.component';
 import { BloglistComponent } from '../blog/bloglist/bloglist.component';
-import { ProjectlistComponent } from '../projects/projectlist/projectlist.component';
+import { ProjectlistComponent } from '../project/projectlist/projectlist.component';
 
 @Component({
   selector: 'app-dashboard',

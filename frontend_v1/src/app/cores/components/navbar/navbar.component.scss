@@ -116,6 +116,12 @@
       }
     }
 
+    &-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit
+    }
+
     &-img {
       width: 5rem;
       height: 5rem;

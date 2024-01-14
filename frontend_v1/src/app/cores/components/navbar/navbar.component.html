@@ -9,8 +9,10 @@
     <ul class="nav-list">
       @for(item of navList; track item.alt) {
       <li class="nav-item">
-        <!-- Implement the actual routing system -->
-        <a class="nav-link"
+        <a
+          class="nav-link"
+          [routerLink]="item.pageRoute"
+          (click)="onActiveMenu()"
           ><img src="{{ item.path }}" alt="{{ item.alt }}" class="nav-img" />
           <span class="nav-item-name">{{ item.alt | titlecase }}</span></a
         >

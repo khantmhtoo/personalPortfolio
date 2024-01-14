@@ -1,0 +1,21 @@
+<!-- On hover do a preview image -->
+<div class="container">
+  <h2>My Projects</h2>
+  <div class="project-container">
+    @for(project of testFakeData; track project.projectTitle) {
+    <div class="project">
+      <h2 class="project-title">{{ project.projectTitle }}</h2>
+      <div class="project-content">
+        <p class="project-summary">{{ project.shortDescription }}</p>
+        <ul class="project-techlist">
+          @for(stack of project.techStack; track stack) {
+          <li class="project-techlist-item">
+            <fa-icon class="project-techlist-icon" [icon]="stack"></fa-icon>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+    }
+  </div>
+</div>
