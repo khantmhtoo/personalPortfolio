@@ -2,7 +2,7 @@
   background-color: black;
   color: #fff;
   width: 100%;
-  height: 100rem;
+  height: 100%;
 }
 .main-container.lightMode {
   background-color: white;
@@ -17,8 +17,7 @@
 }
 .content-container {
   margin-inline: 1rem;
-  margin-bottom: 72px;
-  padding-top: 5rem;
+  padding-block: 80px;
 }
 @media screen and (min-width: 700px) {
   .nav-container {

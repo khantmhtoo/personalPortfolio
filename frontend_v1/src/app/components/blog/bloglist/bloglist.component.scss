@@ -1,86 +1,57 @@
-.container {
+$content-height: 13rem;
+$hover-img-space: 1rem;
+
+.blog {
   margin-block: 1rem;
-}
-.blog-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-block: 1rem;
-  width: 100%;
-  flex-wrap: wrap;
 
-  .blog {
-    height: 23rem;
-    border: 1px solid;
-    position: relative;
+  &-title {
+    margin-bottom: 1rem;
+  }
 
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
-    &-img {
-      width: 100%;
-    }
-
+  &-container {
     &-content {
-      margin: 0.5rem 1rem;
-    }
-
-    &-title {
+      padding: 1rem;
+      height: $content-height;
+      border: 1px solid;
       margin-bottom: 0.5rem;
-    }
-
-    &-btn {
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-      cursor: pointer;
-      padding: 0.25rem;
-      border: none;
-      outline: none;
-      transform: translateY(-4px);
-      box-shadow: inset 0 0 0 #ffe5c4, 0 4px 0 #915100;
-      background-color: #ffa12b;
-
-      &:active {
-        transform: translateY(0);
-        box-shadow: inset 0 0 0 #ffe5c4, 0 0 0 #915100;
-      }
-
-      &:hover {
-        opacity: .7;
-      }
-    }
-  }
-}
-@media screen and (min-width: 450px) {
-  .blog-container {
-    .blog {
+      position: relative;
       display: flex;
-      height: 10rem;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
 
-      &-img {
-        width: 50%;
+      &:hover .blog-container-content-preview {
+        transform: scale(1);
       }
-      &-content {
-        width: 50%;
+
+      &-title {
+        margin-bottom: 0.5rem;
+      }
+
+      &-summary {
+        letter-spacing: 0.5px;
+      }
+
+      &-preview {
+        position: absolute;
+        cursor: pointer;
+        margin-left: auto;
+        border-radius: 50%;
+        border: 1px solid;
+        padding: 0.25rem 0.5rem;
+        transform: scale(0);
+        bottom: 1rem;
+        right: 1rem;
+        font-weight: bolder;
+        transition: all ease-in-out .2s;
       }
     }
   }
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 550px) {
   .blog-container {
-    flex-direction: row;
-    .blog {
-      width: 49%;
-      height: 20rem;
-      flex-direction: column;
-      &-img {
-        width: 100%;
-      }
-      &-content {
-        width: 90%;
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }

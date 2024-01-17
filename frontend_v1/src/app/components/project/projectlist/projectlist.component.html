@@ -1,21 +1,41 @@
-<!-- On hover do a preview image -->
-<div class="container">
-  <h2>My Projects</h2>
+<div class="project">
+  <h2 class="project-title">My Projects</h2>
   <div class="project-container">
-    @for(project of testFakeData; track project.projectTitle) {
-    <div class="project">
-      <h2 class="project-title">{{ project.projectTitle }}</h2>
-      <div class="project-content">
-        <p class="project-summary">{{ project.shortDescription }}</p>
-        <ul class="project-techlist">
+    @for(project of projectList; track project.id) {
+    <div class="project-container-content" (click)="onClick(project.id)">
+      <h3 class="project-container-content-title">
+        {{ project.projectTitle }}
+      </h3>
+      <div class="project-container-content-details">
+        <p class="project-container-content-summary">
+          {{ project.shortDescription }}
+        </p>
+        <ul class="project-container-content-techlist">
           @for(stack of project.techStack; track stack) {
-          <li class="project-techlist-item">
-            <fa-icon class="project-techlist-icon" [icon]="stack"></fa-icon>
+          <li class="project-container-content-techlist-item">
+            <fa-icon
+              class="project-container-content-techlist-icon"
+              [icon]="stack"
+            >
+            </fa-icon>
           </li>
           }
         </ul>
       </div>
+
+      @if(project.imgLink){
+      <div
+        class="project-container-content-preview"
+        [ngStyle]="{ 'background-image': 'url(' + project.imgLink + ' )' }"
+      ></div>
+      } @else {
+      <div class="project-container-content-preview">
+        <h3>No Project Image</h3>
+      </div>
+      }
     </div>
+    } @empty {
+    <div>Currently No Projects Available</div>
     }
   </div>
 </div>
