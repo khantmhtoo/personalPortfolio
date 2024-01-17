@@ -1,0 +1,15 @@
+<div class="tech">
+  <h2 class="tech-title">My Techs</h2>
+  <div class="tech-container">
+    <ul class="tech-container-content">
+      @for(tech of techStack; track tech) {
+      <li class="tech-container-content-item">
+        <fa-icon class="tech-container-content-icon" [icon]="tech">
+        </fa-icon>
+      </li>
+      } @empty {
+      <div>No Tech Skills</div>
+      }
+    </ul>
+  </div>
+</div>

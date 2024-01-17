@@ -1,0 +1,35 @@
+.tech {
+    margin-block: 1rem 1.5rem;
+
+    &-title {
+        margin-bottom: 1rem;
+    }
+
+    &-container {
+        &-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            list-style: none;
+            text-align: center;
+            gap: 10px;
+
+            
+            &-item {
+                border: 1px solid;
+                padding: 2rem;
+            }
+
+            &-icon {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+@media screen and (min-width: 550px) {
+    .tech-container {
+        &-content{
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+  }
+  
