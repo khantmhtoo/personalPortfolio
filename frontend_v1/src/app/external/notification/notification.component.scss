@@ -1,0 +1,27 @@
+:host {
+  ::ng-deep .p-toast {
+    top: 1rem;
+    right: 1rem;
+    width: 20rem;
+    font-size: 1rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "YTLC" 500;
+  }
+
+  ::ng-deep .p-toast-message {
+    padding: 0.5rem 0.25rem;
+    margin-right: auto;
+  }
+
+  ::ng-deep .p-toast-message-content {
+    display: flex;
+    align-items: center;
+  }
+
+  ::ng-deep .p-toast-message-icon {
+    display: none;
+  }
+}

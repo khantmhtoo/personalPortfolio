@@ -1,0 +1,35 @@
+<div class="contact">
+  <h2 class="contact-title">Contact Me!!!</h2>
+  <form [formGroup]="form" class="contact-form">
+    <div class="contact-form-container">
+      <label class="contact-container-form-name" for="name">Name</label>
+      <input
+        class="contact-container-form-input"
+        id="name"
+        type="text"
+        formControlName="name"
+      />
+    </div>
+    <div class="contact-form-container">
+      <label class="contact-form-container-name" for="email">Email</label>
+      <input
+        class="contact-form-container-input"
+        id="email"
+        type="text"
+        formControlName="email"
+      />
+    </div>
+    <div class="contact-form-container">
+      <label class="contact-form-container-name" for="subject">Subject</label>
+      <textarea
+        class="contact-form-container-input"
+        name="subject"
+        id="subject"
+        cols="30"
+        rows="10"
+        formControlName="subject"
+      ></textarea>
+    </div>
+    <button class="contact-form-btn" (click)="onSend()">Submit</button>
+  </form>
+</div>

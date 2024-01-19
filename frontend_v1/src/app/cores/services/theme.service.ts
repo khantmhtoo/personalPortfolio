@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { MTheme } from '../models/theme.models';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { createSignal } from '@angular/core/primitives/signals';
 
 @Injectable({
   providedIn: 'platform',
