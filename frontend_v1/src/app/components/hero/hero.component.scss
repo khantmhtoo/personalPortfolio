@@ -60,11 +60,9 @@
     font-size: 2rem;
   }
 }
-.hero-link.lightMode {
-  &-a {
-    &:hover {
-      background-color: #000;
-      color: #fff;
-    }
+.hero-link-a.lightMode {
+  &:hover {
+    background-color: black;
+    color: #fff;
   }
 }

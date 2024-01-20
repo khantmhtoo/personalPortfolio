@@ -1,26 +1,27 @@
 <div class="contact">
-  <h2 class="contact-title">Contact Me!!!</h2>
+  <h2 class="contact-title">Contact Me</h2>
   <form [formGroup]="form" class="contact-form">
     <div class="contact-form-container">
-      <label class="contact-container-form-name" for="name">Name</label>
       <input
-        class="contact-container-form-input"
+        class="contact-form-container-input"
         id="name"
         type="text"
         formControlName="name"
+        placeholder="Name"
+        required
       />
     </div>
     <div class="contact-form-container">
-      <label class="contact-form-container-name" for="email">Email</label>
       <input
         class="contact-form-container-input"
         id="email"
-        type="text"
+        type="email"
         formControlName="email"
+        placeholder="Email"
+        required
       />
     </div>
     <div class="contact-form-container">
-      <label class="contact-form-container-name" for="subject">Subject</label>
       <textarea
         class="contact-form-container-input"
         name="subject"
@@ -28,8 +29,16 @@
         cols="30"
         rows="10"
         formControlName="subject"
+        placeholder="Type your messages..."
+        required
       ></textarea>
     </div>
-    <button class="contact-form-btn" (click)="onSend()">Submit</button>
+    <button
+      [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+      class="contact-form-btn"
+      (click)="onSend()"
+    >
+      Submit
+    </button>
   </form>
 </div>

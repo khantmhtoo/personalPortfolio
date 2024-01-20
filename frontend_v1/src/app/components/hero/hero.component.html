@@ -17,20 +17,25 @@
       something awesome together!
     </p>
   </div>
-  <div
-    class="hero-link"
-    [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
-  >
+  <div class="hero-link">
     <a
       href="https://www.linkedin.com/in/khant-min-htoo-771a0b161/"
       target="_blank"
       class="hero-link-a"
+      [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
       ><fa-icon class="icon" [icon]="faLinkedin"></fa-icon> Linkedin</a
     >
-    <a href="https://github.com/khantmhtoo" target="_blank" class="hero-link-a"
+    <a
+      href="https://github.com/khantmhtoo"
+      target="_blank"
+      class="hero-link-a"
+      [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
       ><fa-icon class="icon" [icon]="faGithub"></fa-icon>Github</a
     >
-    <a href="mailto:khantmhtoo1294@gmail.com" class="hero-link-a"
+    <a
+      href="mailto:khantmhtoo1294@gmail.com"
+      class="hero-link-a"
+      [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
       ><fa-icon class="icon" [icon]="faEnve"></fa-icon> Mail</a
     >
   </div>
