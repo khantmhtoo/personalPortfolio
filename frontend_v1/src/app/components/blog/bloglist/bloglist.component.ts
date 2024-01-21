@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { BlogService } from '../services/blog.service';
+import { MCBlog } from '../../../fixtures/testFakeDataType';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-bloglist',
@@ -7,23 +10,25 @@ import { Component } from '@angular/core';
   templateUrl: './bloglist.component.html',
   styleUrl: './bloglist.component.scss',
 })
-export class BloglistComponent {
-  blogList = [
-    {
-      id: '000000010',
-      blogTitle: 'Exciting Adventures in Wonderland',
-      summary:
-        'Join Alice on her thrilling journey through Wonderland, encountering curious characters and magical places. This blog post explores the enchanting world beyond the rabbit hole.',
-    },
-    {
-      id: '000000011',
-      blogTitle: 'Delicious Recipes for a Cozy Evening',
-      summary:
-        'Discover mouth-watering recipes to make your evenings cozy and delightful. From comforting soups to decadent desserts, this blog post has it all.',
-    },
-  ];
-  
+export class BloglistComponent implements OnInit, OnDestroy {
+  _blogService = inject(BlogService);
+  blogList!: MCBlog[];
+  blogListSubs!: Subscription;
+
   onClick(id: string) {
     console.log('Clicked on blog');
+  }
+
+  ngOnInit(): void {
+    this._blogService.getProjectList();
+    this.blogListSubs = this._blogService.$blogList.subscribe((data: any) => {
+      this.blogList = data;
+    });
+  }
+  
+  ngOnDestroy(): void {
+    if (this.blogListSubs) {
+      this.blogListSubs.unsubscribe();
+    }
   }
 }

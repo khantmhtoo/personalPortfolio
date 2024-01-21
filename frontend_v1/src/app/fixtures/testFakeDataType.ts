@@ -7,3 +7,9 @@ export type MCProject = {
   techStack: IconDefinition[];
   imgLink?: string;
 };
+
+export type MCBlog = {
+  id: string;
+  blogTitle: string;
+  summary: string;
+};

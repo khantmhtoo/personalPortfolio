@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectService } from '../services/project.service';
 import { MCProject } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projectlist',
@@ -14,13 +15,14 @@ import { Subscription } from 'rxjs';
 })
 export class ProjectlistComponent implements OnInit, OnDestroy {
   _projectService = inject(ProjectService);
+  _router = inject(Router);
   projectList!: MCProject[];
   projectListSubs!: Subscription;
 
   public onClick(id: string) {
     console.log('Access project details.');
-    console.log(id);
-    console.log(this._projectService.getProject(id));
+    this._projectService.getProject(id);
+    this._router.navigate([`project/details/${id}`])
   }
 
   ngOnInit(): void {

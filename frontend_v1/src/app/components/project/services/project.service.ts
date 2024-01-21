@@ -12,7 +12,12 @@ export class ProjectService {
   private projectListBS = new BehaviorSubject(this.projectList);
   public $projectList = this.projectListBS.asObservable();
 
-  // Probably have a single target here
+  private selectedProject!: MCProject | undefined;
+  private selectedProjectBS = new BehaviorSubject(this.selectedProject);
+  public $selectedProject = this.selectedProjectBS.asObservable();
+  public signalSelectedProject = toSignal(this.$selectedProject, {
+    initialValue: undefined,
+  });
 
   getProjectList() {
     this.projectList = testFakeDataProject;
@@ -20,6 +25,12 @@ export class ProjectService {
   }
 
   getProject(id: string) {
-    return this.projectList.find((project) => project.id === id);
+    this.selectedProject = this.projectList.find(
+      (project) => project.id === id
+    );
+
+    if (this.$selectedProject) {
+      this.selectedProjectBS.next(this.selectedProject);
+    }
   }
 }
