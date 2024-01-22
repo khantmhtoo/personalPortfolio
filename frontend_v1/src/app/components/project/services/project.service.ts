@@ -15,10 +15,12 @@ export class ProjectService {
   private selectedProject!: MCProject | undefined;
   private selectedProjectBS = new BehaviorSubject(this.selectedProject);
   public $selectedProject = this.selectedProjectBS.asObservable();
+
   public signalSelectedProject = toSignal(this.$selectedProject, {
     initialValue: undefined,
   });
 
+  // Need to persist this data
   getProjectList() {
     this.projectList = testFakeDataProject;
     this.projectListBS.next(this.projectList);

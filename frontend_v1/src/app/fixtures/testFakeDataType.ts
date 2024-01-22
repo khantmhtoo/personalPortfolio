@@ -8,8 +8,17 @@ export type MCProject = {
   imgLink?: string;
 };
 
+type content = {
+  section: string;
+  description: string;
+};
+
 export type MCBlog = {
   id: string;
   blogTitle: string;
   summary: string;
+  author?: string;
+  date: string;
+  content: content[];
+  tags: string[];
 };

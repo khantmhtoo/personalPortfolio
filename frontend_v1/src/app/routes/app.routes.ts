@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
-import { projectGuard } from '../cores/guards/project.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -14,25 +13,17 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'blog',
-    loadComponent: () =>
-      import('../components/blog/blog.component').then(
-        (mod) => mod.BlogComponent
+    loadChildren: () =>
+      import('../components/blog/routes/blog.rotues').then(
+        (mod) => mod.BLOG_ROUTES
       ),
   },
   {
     path: 'project',
-    loadComponent: () =>
-      import('../components/project/project.component').then(
-        (mod) => mod.ProjectComponent
+    loadChildren: () =>
+      import('../components/project/routes/project.routes').then(
+        (mod) => mod.PROJECT_ROUTES
       ),
-  },
-  {
-    path: 'project/details/:id',
-    canActivate: [projectGuard],
-    loadComponent: () =>
-      import(
-        '../components/project/projectdetail/projectdetail.component'
-      ).then((mod) => mod.ProjectdetailComponent),
   },
   {
     path: '**',

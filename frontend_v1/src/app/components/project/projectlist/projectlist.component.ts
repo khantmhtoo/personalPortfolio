@@ -20,8 +20,6 @@ export class ProjectlistComponent implements OnInit, OnDestroy {
   projectListSubs!: Subscription;
 
   public onClick(id: string) {
-    console.log('Access project details.');
-    this._projectService.getProject(id);
     this._router.navigate([`project/details/${id}`])
   }
 

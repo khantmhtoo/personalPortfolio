@@ -15,16 +15,14 @@ export class BlogService {
   private selectedBlog!: MCBlog | undefined;
   private selectedBlogBS = new BehaviorSubject(this.selectedBlog);
   public $selectedBlog = this.selectedBlogBS.asObservable();
-  public signalSelectedBlog = toSignal(this.$selectedBlog, {
-    initialValue: undefined,
-  });
 
-  getProjectList() {
+
+  getBlogList() {
     this.blogList = testFakeDataBlog;
     this.blogListBS.next(this.blogList);
   }
 
-  getProject(id: string) {
+  getBlog(id: string) {
     this.selectedBlog = this.blogList.find((blog) => blog.id === id);
 
     if (this.$selectedBlog) {
