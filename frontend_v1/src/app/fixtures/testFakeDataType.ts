@@ -11,6 +11,7 @@ export type MCProject = {
 type content = {
   section: string;
   description: string;
+  visuals?: string;
 };
 
 export type MCBlog = {

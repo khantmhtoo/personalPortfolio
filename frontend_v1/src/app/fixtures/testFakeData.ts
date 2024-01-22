@@ -31,7 +31,7 @@ export const testFakeDataBlog: MCBlog[] = [
     blogTitle: 'Understanding Unity State Machines',
     summary:
       'Understanding Unity State Machines is a comprehensive exploration of the fundamental concept of state machines in Unity game development.',
-    author: 'John Doe',
+    author: 'Khant',
     date: '2024-01-21',
     content: [
       {

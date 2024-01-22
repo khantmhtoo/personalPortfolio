@@ -3,23 +3,28 @@ import { BlogService } from '../services/blog.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MCBlog } from '../../../fixtures/testFakeDataType';
-import { Subscription } from 'rxjs';
+import { Subscription, filter } from 'rxjs';
+import { ThemeService } from '../../../cores/services/theme.service';
 
 @Component({
   selector: 'app-blogdetail',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './blogdetail.component.html',
-  styleUrl: './blogdetail.component.scss'
+  styleUrl: './blogdetail.component.scss',
 })
 export class BlogdetailComponent {
   _blogService = inject(BlogService);
+  _themeService = inject(ThemeService);
+
   _activatedRoute = inject(ActivatedRoute);
   _router = inject(Router);
+
   selectedData: MCBlog | undefined;
   selectedDataSub!: Subscription;
+  currThemeDark?: any = this._themeService.signalThemeDark();
 
-  ngOnInit(): void {
+  onAccess(): void {
     this._activatedRoute.params.subscribe((params) => {
       const itemId = params['id'];
       this._blogService.getBlogList();
@@ -29,11 +34,18 @@ export class BlogdetailComponent {
           this.selectedData = data;
         }
       );
-
       if (!this.selectedData) {
         this._router.navigate(['**']);
       }
     });
+  }
+
+  onBack(): void {
+    this._router.navigate(['/dashboard']);
+  }
+
+  ngOnInit(): void {
+    this.onAccess();
   }
 
   ngOnDestroy(): void {
