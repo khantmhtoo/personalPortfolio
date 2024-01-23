@@ -1,1 +1,52 @@
-{{ selectedData | json }}
+<div class="container">
+  <div class="container-intro">
+    <h2 class="container-intro-title">{{ selectedData?.projectTitle }}</h2>
+    <!-- <div class="container-intro-sub">
+        <span class="container-intro-sub-title">Author</span>
+        <span class="container-intro-sub-content">
+          {{ selectedData?.author }}</span
+        >
+      </div>
+      <div class="container-intro-sub">
+        <span class="container-intro-sub-title">Date</span>
+        <span class="container-intro-sub-content"> {{ selectedData?.date }}</span>
+      </div> -->
+  </div>
+  <div class="container-content">
+    <!-- @for(content of selectedData?.content; track content) {
+      <div
+        class="container-content-detail"
+        [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+      >
+        @if(content?.visuals) {
+        <img
+          src="{{ content.visuals }}"
+          alt="visuals"
+          class="container-content-detail-img"
+        />
+        }
+        <div>
+          <h3 class="container-content-detail-title">{{ content.section }}</h3>
+          <p class="container-content-detail-info">{{ content.description }}</p>
+        </div>
+      </div>
+      } @empty {
+      <div>No Content Updated</div>
+      } -->
+  </div>
+  <!-- <div class="container-tags">
+      <h4 class="container-tags-title">Tags</h4>
+      <ul class="container-tags-list">
+        @for(item of selectedData?.tags; track item) {
+        <li class="container-tags-list-item">{{ item }}</li>
+        }
+      </ul>
+    </div> -->
+  <button
+    class="container-btn"
+    [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+    (click)="onBack()"
+  >
+    Back
+  </button>
+</div>

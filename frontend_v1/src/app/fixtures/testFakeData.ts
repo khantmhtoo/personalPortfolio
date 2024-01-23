@@ -6,22 +6,64 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { MCBlog, MCProject } from './testFakeDataType';
 
+// Later Change This -- What we will do is get the completed data based on the id
 export const testFakeDataProject: MCProject[] = [
   {
     id: '000000001',
     projectTitle: 'Awesome Task Manager',
-    shortDescription:
-      'Connect and share with friends through a dynamic dashboard that integrates social media feeds, personalized content, and real-time updates.',
+    overallSummary: `The Awesome Task Manager streamlines task management with a dynamic dashboard, integrating social feeds and real-time updates for effortless organization. Stay connected with friends while managing tasks seamlessly.`,
+    status: 'Completed',
+    position: 'Engineer UI',
+    company: 'N/A',
+    section: {
+      sectionTitle: 'Dynamic Dashboard for Task Management',
+      descriptionSection: [
+        {
+          title: 'Overview',
+          content: `
+            The Awesome Task Manager is designed to provide a seamless experience for task management. 
+            With a dynamic dashboard that integrates social media feeds, personalized content, and real-time updates, 
+            it's the perfect tool for staying organized and connected with friends.
+          `,
+        },
+        {
+          title: 'Key Features',
+          content: `
+            - Dynamic Dashboard
+            - Social Media Integration
+            - Personalized Content
+            - Real-time Updates
+          `,
+        },
+        {
+          title: 'Technologies Used',
+          content: `
+            - Angular for the frontend
+            - Node.js for the backend
+            - Unity for interactive elements
+            - React for additional UI components
+          `,
+        },
+        // Add more sections as needed
+      ],
+    },
     techStack: [faAngular, faNodeJs, faUnity, faReact],
     imgLink: '../../../../assets/wallPaperNavScreen.jpg',
-  },
-  {
-    id: '000000002',
-    projectTitle: 'Awesome Task Manager',
-    shortDescription:
-      'Connect and share with friends through a dynamic dashboard that integrates social media feeds, personalized content, and real-time updates.',
-    techStack: [faAngular, faNodeJs, faUnity, faReact],
-    imgLink: '../../../../assets/wallPaperNavScreen.jpg',
+    moreDetails: {
+      keyFeatures: [
+        'Dynamic Dashboard',
+        'Social Media Integration',
+        'Personalized Content',
+        'Real-time Updates',
+      ],
+      technologiesUsed: [
+        'Angular for the frontend',
+        'Node.js for the backend',
+        'Unity for interactive elements',
+        'React for additional UI components',
+      ],
+      imagePath: '../../../../assets/screenshots/taskManagerScreenshot.jpg',
+    },
   },
 ];
 
