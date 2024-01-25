@@ -10,17 +10,6 @@
         <p class="project-container-content-summary">
           {{ project.overallSummary }}
         </p>
-        <ul class="project-container-content-techlist">
-          @for(stack of project.techStack; track stack) {
-          <li class="project-container-content-techlist-item">
-            <fa-icon
-              class="project-container-content-techlist-icon"
-              [icon]="stack"
-            >
-            </fa-icon>
-          </li>
-          }
-        </ul>
       </div>
 
       @if(project.imgLink){

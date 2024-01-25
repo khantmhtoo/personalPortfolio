@@ -15,55 +15,46 @@ export const testFakeDataProject: MCProject[] = [
     status: 'Completed',
     position: 'Engineer UI',
     company: 'N/A',
-    section: {
-      sectionTitle: 'Dynamic Dashboard for Task Management',
-      descriptionSection: [
-        {
-          title: 'Overview',
-          content: `
-            The Awesome Task Manager is designed to provide a seamless experience for task management. 
-            With a dynamic dashboard that integrates social media feeds, personalized content, and real-time updates, 
-            it's the perfect tool for staying organized and connected with friends.
-          `,
-        },
-        {
-          title: 'Key Features',
-          content: `
-            - Dynamic Dashboard
-            - Social Media Integration
-            - Personalized Content
-            - Real-time Updates
-          `,
-        },
-        {
-          title: 'Technologies Used',
-          content: `
-            - Angular for the frontend
-            - Node.js for the backend
-            - Unity for interactive elements
-            - React for additional UI components
-          `,
-        },
-        // Add more sections as needed
-      ],
-    },
-    techStack: [faAngular, faNodeJs, faUnity, faReact],
+    date: '2024-01-21',
+    type: 'Work Project',
     imgLink: '../../../../assets/wallPaperNavScreen.jpg',
-    moreDetails: {
-      keyFeatures: [
-        'Dynamic Dashboard',
-        'Social Media Integration',
-        'Personalized Content',
-        'Real-time Updates',
-      ],
-      technologiesUsed: [
-        'Angular for the frontend',
-        'Node.js for the backend',
-        'Unity for interactive elements',
-        'React for additional UI components',
-      ],
-      imagePath: '../../../../assets/screenshots/taskManagerScreenshot.jpg',
-    },
+    content: [
+      {
+        visuals: '../../../../assets/wallPaperNavScreen.jpg',
+        section: 'Overview',
+        description: [
+          "The Awesome Task Manager is designed to provide a seamless experience for task management.  With a dynamic dashboard that integrates social media feeds, personalized content, and real-time updates, it's the perfect tool for staying organized and connected with friends.",
+        ],
+      },
+      {
+        section: 'Key Features',
+        description: [
+          {
+            subSection: 'Dynamic Dashboard',
+            subDescription:
+              'Dynamic dashboard: Real-time, customizable data visualization for quick and interactive insights.',
+          },
+          {
+            subSection: 'Social Media Integration',
+            subDescription:
+              'Seamless integration of social media platforms for enhanced connectivity and engagement.',
+          },
+
+          {
+            subSection: 'Personalized Content',
+            subDescription:
+              'Tailored content delivery based on user preferences for a personalized experience.',
+          },
+
+          {
+            subSection: 'Real-time Updates',
+            subDescription:
+              'Instant and live updates to keep users informed and up-to-date on relevant information.',
+          },
+        ],
+      },
+    ],
+    techStack: ['Angular', 'Node.js', 'Unity', 'React'],
   },
 ];
 

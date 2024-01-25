@@ -1,4 +1,8 @@
-import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+type content = {
+  section: string;
+  description: any;
+  visuals?: string;
+};
 
 export type MCProject = {
   id: string;
@@ -7,27 +11,11 @@ export type MCProject = {
   status: string;
   position: string;
   company: string;
-  section: {
-    sectionTitle: string;
-    descriptionSection: {
-      title: string;
-      content: string;
-    }[];
-  };
-  techStack: IconDefinition[]; // Assuming 'faAngular', 'faNodeJs', etc., are strings
+  type: string;
+  date: string;
+  content: content[];
   imgLink: string;
-  moreDetails: {
-    keyFeatures: string[];
-    technologiesUsed: string[];
-    imagePath: string;
-    // Add more details as needed
-  };
-};
-
-type content = {
-  section: string;
-  description: string;
-  visuals?: string;
+  techStack: string[]
 };
 
 export type MCBlog = {

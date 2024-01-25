@@ -5,11 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MCProject } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
 import { ThemeService } from '../../../cores/services/theme.service';
+import { AccordionModule } from 'primeng/accordion';
 
 @Component({
   selector: 'app-projectdetail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AccordionModule],
   templateUrl: './projectdetail.component.html',
   styleUrl: './projectdetail.component.scss',
 })
