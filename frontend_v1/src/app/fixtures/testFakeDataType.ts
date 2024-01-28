@@ -2,6 +2,7 @@ type content = {
   section: string;
   description: any;
   visuals?: string;
+  subContent?: any;
 };
 
 export type MCProject = {
@@ -15,7 +16,7 @@ export type MCProject = {
   date: string;
   content: content[];
   imgLink: string;
-  techStack: string[]
+  techStack: string[];
 };
 
 export type MCBlog = {

@@ -18,6 +18,7 @@ import {
 bootstrapApplication(AppComponent, {
   providers: [
     // New Way of implementing the Routes
+    importProvidersFrom(BrowserAnimationsModule),
     provideRouter(APP_ROUTES, withComponentInputBinding()),
     // {
     //   provide: AuthService,
@@ -29,9 +30,5 @@ bootstrapApplication(AppComponent, {
 });
 
 bootstrapApplication(ExternalComponent, {
-  providers: [
-    importProvidersFrom(
-      BrowserAnimationsModule
-    ),
-  ],
+  providers: [importProvidersFrom(BrowserAnimationsModule)],
 });

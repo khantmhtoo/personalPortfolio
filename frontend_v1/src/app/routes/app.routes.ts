@@ -26,6 +26,13 @@ export const APP_ROUTES: Routes = [
       ),
   },
   {
+    path: 'resume/detail',
+    loadComponent: () =>
+      import('../components/resume/resume-detail/resume-detail.component').then(
+        (mod) => mod.ResumeDetailComponent
+      ),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('../cores/components/error/error.component').then(

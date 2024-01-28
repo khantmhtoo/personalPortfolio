@@ -23,18 +23,23 @@
       [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
     >
       @if(content?.visuals) {
-      <img
-        src="{{ content.visuals }}"
-        alt="visuals"
+      <div
         class="container-content-detail-img"
-      />
+        [ngStyle]="{ 'background-image': 'url(' + content.visuals + ')' }"
+      ></div>
       }
-      <div>
-        <h3 class="container-content-detail-title">{{ content.section }}</h3>
-        @if(content.description.length > 1) {
-        <div>{{ content }}</div>
-        } @else {
-        <p class="container-content-detail-info">{{ content.description }}</p>
+      <h3 class="container-content-detail-title">{{ content.section }}</h3>
+      <p class="container-content-detail-des">{{ content.description }}</p>
+      <div class="container-content-detail-sub">
+        @for(subs of content.subContent; track subs) {
+        <h4 class="container-content-detail-sub-title">{{ subs.section }}</h4>
+        <p-accordion>
+          @for(innerSubs of subs.descriptions; track innerSubs) {
+          <p-accordionTab header="{{ innerSubs.subSection }}">
+            <p>{{ innerSubs.subDescription }}</p>
+          </p-accordionTab>
+          }
+        </p-accordion>
         }
       </div>
     </div>
@@ -42,14 +47,14 @@
     <div>No Content Updated</div>
     }
   </div>
-  <!-- <div class="container-tags">
-      <h4 class="container-tags-title">Tags</h4>
-      <ul class="container-tags-list">
-        @for(item of selectedData?.tags; track item) {
-        <li class="container-tags-list-item">{{ item }}</li>
-        }
-      </ul>
-    </div> -->
+  <div class="container-tags">
+    <h4 class="container-tags-title">Tech Stack</h4>
+    <ul class="container-tags-list">
+      @for(stack of selectedData?.techStack; track stack) {
+      <li class="container-tags-list-item">{{ stack }}</li>
+      }
+    </ul>
+  </div>
   <button
     class="container-btn"
     [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"

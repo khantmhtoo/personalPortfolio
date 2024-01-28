@@ -4,6 +4,8 @@
   width: 100%;
   min-height: 100vh;
   max-height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 .main-container.lightMode {
   background-color: white;
@@ -30,4 +32,19 @@
     margin-inline: auto;
     display: flex;
   }
+}
+
+.img-1 {
+  top: 5rem;
+  left: 5rem;
+  position: absolute;
+  pointer-events: none;
+  opacity: .5;
+}
+.img-2 {
+  bottom: 50%;
+  right: 0;
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
 }

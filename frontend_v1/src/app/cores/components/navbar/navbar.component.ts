@@ -37,12 +37,7 @@ export class NavbarComponent {
     {
       path: '../../../../assets/navIcons/ResumeAppIcon.png',
       alt: 'resume',
-      pageRoute: 'resume',
-    },
-    {
-      path: '../../../../assets/navIcons/ContactAppIcon.png',
-      alt: 'contact',
-      pageRoute: 'contact',
+      pageRoute: 'resume/detail',
     },
   ];
 

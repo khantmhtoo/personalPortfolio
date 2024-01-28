@@ -1,0 +1,24 @@
+<div class="resume">
+  <h2 class="resume-title">Resume</h2>
+  <div class="resume-container">
+    <span>Click To View PDF Version</span>
+    <a href="../../../assets/Resume.pdf" target="_blank">
+      <button
+        class="resume-btn"
+        [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+      >
+        Click
+      </button></a
+    >
+  </div>
+  <div class="resume-container">
+    <span>Click To View Browser Version</span>
+    <button
+      class="resume-btn"
+      [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+      (click)="onResume()"
+    >
+      Click
+    </button>
+  </div>
+</div>

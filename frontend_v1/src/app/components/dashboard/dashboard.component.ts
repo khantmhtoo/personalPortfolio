@@ -5,6 +5,7 @@ import { BloglistComponent } from '../blog/bloglist/bloglist.component';
 import { ProjectlistComponent } from '../project/projectlist/projectlist.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component';
 import { ContactComponent } from '../contact/contact.component';
+import { ResumeComponent } from '../resume/resume.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,7 @@ import { ContactComponent } from '../contact/contact.component';
     ProjectlistComponent,
     TechStackComponent,
     ContactComponent,
+    ResumeComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
