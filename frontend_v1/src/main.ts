@@ -18,7 +18,10 @@ import {
 bootstrapApplication(AppComponent, {
   providers: [
     // New Way of implementing the Routes
-    importProvidersFrom(BrowserAnimationsModule),
+    importProvidersFrom(
+      BrowserAnimationsModule,
+      RouterModule.forRoot(APP_ROUTES, { scrollPositionRestoration: 'enabled' })
+    ),
     provideRouter(APP_ROUTES, withComponentInputBinding()),
     // {
     //   provide: AuthService,

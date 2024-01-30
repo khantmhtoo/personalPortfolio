@@ -1,1 +1,64 @@
-<p>resume-detail works!</p>
+<div class="resume">
+  <div class="resume-container">
+    <div>
+      <h2 class="resume-title">
+        {{ resumeData.name }}
+      </h2>
+      <p class="resume-overview">{{ resumeData.overview }}</p>
+    </div>
+    <div>
+      <span>{{ resumeData.email }}</span>
+    </div>
+  </div>
+
+  <div class="resume-container">
+    <h3 class="resume-subtitle">Experience</h3>
+    @for(exp of resumeData.experience; track exp.name) {
+    <div class="resume-container-experience">
+      <h4 class="resume-container-experience-name">{{ exp.name }}</h4>
+      <p>{{ exp.location }}</p>
+      <p>{{ exp.position }}</p>
+      <p>{{ exp.date }}</p>
+      <ul>
+        @for(des of exp.description; track des) {
+        <li>{{ des }}</li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+
+  <div class="resume-container">
+    <h3 class="resume-subtitle">Education</h3>
+    @for(edu of resumeData.education; track edu.name) {
+    <div class="resume-container-education">
+      <h4 class="resume-container-education-name">{{ edu.name }}</h4>
+      <p>{{ edu.location }}</p>
+      <p>{{ edu.position }}</p>
+      <p>{{ edu.date }}</p>
+      <p>{{ edu.description }}</p>
+    </div>
+    }
+  </div>
+
+  <div class="resume-container">
+    <h3 class="resume-subtitle">Skills</h3>
+    @for(skills of resumeData.skills; track skills) {
+    <h4>{{ skills.name }}</h4>
+    <p>{{ skills.skill }}</p>
+    }
+  </div>
+
+  <div class="resume-container">
+    <h3 class="resume-subtitle">Languages</h3>
+    {{ resumeData.languages }}
+  </div>
+
+  <button
+    class="container-btn"
+    [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+    (click)="onBack()"
+  >
+    Back
+  </button>
+</div>
