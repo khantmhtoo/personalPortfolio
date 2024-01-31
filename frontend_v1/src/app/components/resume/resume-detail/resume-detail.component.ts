@@ -15,9 +15,9 @@ import { Router } from '@angular/router';
 export class ResumeDetailComponent {  
   _router = inject(Router);
   _projectService = inject(ProjectService);
-  _themeService = inject(ThemeService);
-  
   resumeData: MCResume = resumeData;
+  
+  _themeService = inject(ThemeService);
   currThemeDark?: any = this._themeService.signalThemeDark();
   
   onBack(): void {

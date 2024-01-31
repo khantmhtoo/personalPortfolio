@@ -1,5 +1,5 @@
 <div class="project">
-  <h2 class="project-title">My Projects</h2>
+  <h2 class="project-title" (click)="routeToLink()">My Projects</h2>
   <div class="project-container">
     @for(project of projectList; track project.id) {
     <div class="project-container-content" (click)="onClick(project.id)">

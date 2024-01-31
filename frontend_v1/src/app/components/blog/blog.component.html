@@ -1,1 +1,8 @@
 <app-bloglist></app-bloglist>
+<button
+  class="container-btn"
+  [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+  (click)="onBack()"
+>
+  Back
+</button>

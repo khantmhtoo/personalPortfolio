@@ -3,11 +3,12 @@ import { BlogService } from '../services/blog.service';
 import { MCBlog } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bloglist',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './bloglist.component.html',
   styleUrl: './bloglist.component.scss',
 })
@@ -19,6 +20,10 @@ export class BloglistComponent implements OnInit, OnDestroy {
 
   onClick(id: string) {
     this._router.navigate([`blog/details/${id}`]);
+  }
+
+  routeToLink() {
+    this._router.navigate([`blog`]);
   }
 
   ngOnInit(): void {

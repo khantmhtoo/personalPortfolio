@@ -41,7 +41,7 @@ export class BlogdetailComponent {
   }
 
   onBack(): void {
-    this._router.navigate(['/dashboard']);
+    this._router.navigate(['/blog']);
   }
 
   ngOnInit(): void {

@@ -19,8 +19,12 @@ export class ProjectlistComponent implements OnInit, OnDestroy {
   projectList!: MCProject[];
   projectListSubs!: Subscription;
 
+  public routeToLink() {
+    this._router.navigate([`project`]);
+  }
+
   public onClick(id: string) {
-    this._router.navigate([`project/details/${id}`])
+    this._router.navigate([`project/details/${id}`]);
   }
 
   ngOnInit(): void {

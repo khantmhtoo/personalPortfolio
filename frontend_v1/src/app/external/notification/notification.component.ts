@@ -1,7 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  computed,
+  inject,
+} from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { NotificationService } from './notification.service';
 
 @Component({
   selector: 'app-notification',
@@ -11,20 +18,22 @@ import { ToastModule } from 'primeng/toast';
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.scss',
 })
-export class NotificationComponent {
-  constructor(private messageService: MessageService) {
-    // setTimeout(() => {
-    //   this.show();
-    //   console.log('Ran');
-    // }, 1000);
+export class NotificationComponent implements OnInit {
+  _notiService = inject(NotificationService);
+  _messageService = inject(MessageService);
+  _cdr = inject(ChangeDetectorRef);
+
+  notiData: any;
+
+  ngOnInit(): void {
+    this._notiService.$notiTypeBS.subscribe((msg) => {
+      this.notiData = msg?.getNoti();
+      this.showMsg(this.notiData);
+      this._cdr.detectChanges();
+    });
   }
 
-  show() {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Message Content',
-      life: 100000,
-    });
+  showMsg(msg: any) {
+    this._messageService.add(msg);
   }
 }

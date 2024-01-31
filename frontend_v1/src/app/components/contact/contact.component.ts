@@ -6,9 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NotificationService } from '../../cores/services/notification.service';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../cores/services/theme.service';
+import { NotificationService } from '../../external/notification/notification.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,6 +21,7 @@ export class ContactComponent implements OnInit {
   _fb = inject(FormBuilder);
   _noti = inject(NotificationService);
   _theme = inject(ThemeService);
+
   form!: FormGroup;
   currThemeDark?: any = this._theme.signalThemeDark();
 
@@ -35,10 +36,16 @@ export class ContactComponent implements OnInit {
   onSend() {
     if (this.form.valid) {
       console.log('Email has been send.');
+
       this.form.reset();
+
       // Just use notification to update the user if the process is completed or not
     } else {
       console.log('Email is not valid');
+      this._noti.showError(
+        'Error has occur',
+        'Please fill in the required information'
+      );
       // Just use notification to update the user if the process is completed or not
     }
   }

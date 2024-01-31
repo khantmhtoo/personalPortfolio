@@ -1,1 +1,8 @@
-<app-projectlist></app-projectlist>
+<app-projectlist></app-projectlist
+><button
+  class="container-btn"
+  [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"
+  (click)="onBack()"
+>
+  Back
+</button>
