@@ -1,28 +1,63 @@
-.container-btn {
-  font-family: "Nunito Sans", sans-serif;
-  letter-spacing: 1px;
-  padding: 0.25rem 0.5rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  width: 5rem;
-  font-weight: bold;
-  transform: translateY(0);
-  box-shadow: 0 3px 0 white;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
+@import "../../../cores/styles/default.scss";
 
-  &:active {
-    box-shadow: 0 0 0;
-    transform: translateY(3px);
+.resume {
+  &-container {
+    &-title {
+      margin-bottom: 0.5rem;
+    }
+
+    &-subtitle {
+      margin-bottom: 0.25rem;
+      text-decoration: underline;
+    }
+
+    &-experience {
+      margin-bottom: 1rem;
+      &-container {
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+      }
+      
+      &-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-list {
+        list-style: inside;
+        margin-left: 22px;
+        font-size: 0.9rem;
+        li {
+          text-indent: -22px;
+          letter-spacing: 0.5px;
+
+          &:not(:last-child) {
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
   }
 }
-.container-btn.lightMode {
-  box-shadow: 0 3px 0 black;
 
-  &:active {
-    box-shadow: 0 0 0;
-    transform: translateY(3px);
-  }
+.container-btn {
+  @include btn;
+}
+.container-btn.lightMode {
+  @include btn(black);
+}
+.special-text,
+.highlight {
+  font-style: italic;
+}
+.highlight {
+  @include specialTxt;
+}
+hr {
+  margin-block: 1rem;
+  width: 75%;
+  margin-inline: auto;
+  border: dashed 1px;
 }

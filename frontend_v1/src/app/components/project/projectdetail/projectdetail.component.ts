@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MCProject } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
 import { ThemeService } from '../../../cores/services/theme.service';
 import { AccordionModule } from 'primeng/accordion';
+import { MCProject } from '../models/project.model';
 
 @Component({
   selector: 'app-projectdetail',

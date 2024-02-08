@@ -9,6 +9,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../cores/services/theme.service';
 import { NotificationService } from '../../external/notification/notification.service';
+import { ContactService } from './services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,6 +22,7 @@ export class ContactComponent implements OnInit {
   _fb = inject(FormBuilder);
   _noti = inject(NotificationService);
   _theme = inject(ThemeService);
+  _contact = inject(ContactService);
 
   form!: FormGroup;
   currThemeDark?: any = this._theme.signalThemeDark();
@@ -28,25 +30,30 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.form = this._fb.group({
       name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern(
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+          ),
+        ],
+      ],
       subject: ['', [Validators.required]],
     });
   }
 
   onSend() {
     if (this.form.valid) {
-      console.log('Email has been send.');
-
-      this.form.reset();
-
-      // Just use notification to update the user if the process is completed or not
-    } else {
-      console.log('Email is not valid');
-      this._noti.showError(
-        'Error has occur',
-        'Please fill in the required information'
+      this._noti.showSucces(
+        'Success',
+        'Email has been send and will be responded within 3 days'
       );
-      // Just use notification to update the user if the process is completed or not
+      this._contact.sendEmail(this.form.value);
+      this.form.reset();
+    } else {
+      this._noti.showError('Error', 'Please fill in valid information');
     }
   }
 }

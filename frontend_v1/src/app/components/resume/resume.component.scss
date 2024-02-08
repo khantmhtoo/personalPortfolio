@@ -1,3 +1,4 @@
+@import "../../cores/styles/default.scss";
 .resume {
   margin-block: 1rem;
 
@@ -8,43 +9,15 @@
   &-container {
     display: flex;
     justify-content: space-between;
-
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
   }
 
   &-btn {
-    font-family: "Nunito Sans", sans-serif;
-    letter-spacing: 1px;
-    padding: 0.25rem 0.5rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    width: 5rem;
-    font-weight: bold;
-    transform: translateY(0);
-    box-shadow: 0 3px 0 white;
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-
-    &:active {
-      box-shadow: 0 0 0;
-      transform: translateY(3px);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    @include btn;
   }
   &-btn.lightMode {
-    box-shadow: 0 3px 0 black;
-
-    &:active {
-      box-shadow: 0 0 0;
-      transform: translateY(3px);
-    }
+    @include btn(black);
   }
 }

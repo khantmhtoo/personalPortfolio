@@ -1,7 +1,7 @@
 <div class="blog">
   <h2 class="blog-title" (click)="routeToLink()">My Blogs</h2>
   <div class="blog-container">
-    @for(blog of blogList | slice : 1 : 5; track blog.id) {
+    @for(blog of blogList | slice : 0 : 5; track blog.id) {
     <div class="blog-container-content">
       <div>
         <h3 class="blog-container-content-title">{{ blog.blogTitle }}</h3>

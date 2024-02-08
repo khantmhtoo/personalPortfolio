@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { BlogService } from '../services/blog.service';
-import { MCBlog } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MCBlog } from '../models/blog.model';
 
 @Component({
   selector: 'app-bloglist',
@@ -29,7 +29,7 @@ export class BloglistComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this._blogService.getBlogList();
     this.blogListSubs = this._blogService.$blogList.subscribe((data: any) => {
-      this.blogList = data;
+      this.blogList = data.Blog;
     });
   }
 

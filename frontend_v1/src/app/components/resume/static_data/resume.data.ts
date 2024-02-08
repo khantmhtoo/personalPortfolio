@@ -35,6 +35,41 @@ export const resumeData: MCResume = {
         'Built robust API using Laravel as Backend, contributing to comprehensive skill set and gaining valuable backend development experience',
       ],
     },
+    {
+      name: 'CHEM USA',
+      location: 'Newark',
+      position: 'RMA & QC/QA Technician',
+      date: 'December 2022 - May 2023',
+      description: [
+        'Enhanced and maintained records for over 100 finished products daily',
+        'Executed RMA and OS procedures for 50-100 products daily',
+        'Conducted quality verification on final product performances prior to shipment',
+      ],
+    },
+    {
+      name: 'Antra',
+      location: 'Remote',
+      position: 'Angular Developer Intern',
+      date: 'July 2022 - February 2023',
+      description: [
+        'Gained fundamental hands-on experience in Angular framework, laying a solid foundation for continued growth in SPA development',
+        'Collaborated in a small team of 4-5 members in successfully building a robust Frontend Application',
+        'Actively contributed ideas for additional product features in collaboration with various teams',
+        'Initiated and implemented solutions to enhance application efficiency, by leveraging features like Lazy Loading, NgZone, and other Angular framework features',
+        'Collaborated effectively with the Backend team as an API tester',
+      ],
+    },
+    {
+      name: 'San Jose State University',
+      location: 'San Jose',
+      position: 'Teacher Assistant',
+      date: 'January 2022 - May 2022',
+      description: [
+        'Produced and delivered comprehensive course materials to a diverse group of over a dozen students, tailoring content for effective learning experiences',
+        'Offered constructive feedback and guidance on students’ work, fostering continuous improvement in the quality of their assignments',
+        'Actively assisted students with course assignments and projects, encouraging self-development by providing clarity on the purpose and objectives of each task',
+      ],
+    },
   ],
   education: [
     {
@@ -43,41 +78,6 @@ export const resumeData: MCResume = {
       position: 'B.S in Computer Networking and System Management',
       date: 'August 2017 - August 2022',
       description: ['Minor in Business Management'],
-    },
-  ],
-  languages: ['Burmese, English'],
-  skills: [
-    {
-      name: 'programming',
-      skill: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'TypeScript',
-        'Angular',
-        'React',
-        'Laravel',
-        'PHP',
-        'Docker',
-        'GIT',
-        'JIRA',
-        'Postman',
-        'Testing Libraries',
-      ],
-    },
-    {
-      name: 'technician',
-      skill: ['QC Management', 'RMA Management'],
-    },
-    {
-      name: 'others',
-      skill: [
-        'Fast Learner',
-        'Positive Attitude',
-        'Teamwork',
-        'Time Management',
-        'Manufacturing Concepts',
-      ],
     },
   ],
 };

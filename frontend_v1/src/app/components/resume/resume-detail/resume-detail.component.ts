@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MCResume, resumeData } from '../static_data/resume.data';
 import { CommonModule } from '@angular/common';
-import { ProjectService } from '../../project/services/project.service';
 import { ThemeService } from '../../../cores/services/theme.service';
 import { Router } from '@angular/router';
 
@@ -14,7 +13,6 @@ import { Router } from '@angular/router';
 })
 export class ResumeDetailComponent {  
   _router = inject(Router);
-  _projectService = inject(ProjectService);
   resumeData: MCResume = resumeData;
   
   _themeService = inject(ThemeService);

@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { BlogService } from '../services/blog.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MCBlog } from '../../../fixtures/testFakeDataType';
 import { Subscription, filter } from 'rxjs';
 import { ThemeService } from '../../../cores/services/theme.service';
+import { MCBlog } from '../models/blog.model';
 
 @Component({
   selector: 'app-blogdetail',

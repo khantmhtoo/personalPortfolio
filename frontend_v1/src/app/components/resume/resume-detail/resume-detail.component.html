@@ -1,25 +1,28 @@
 <div class="resume">
   <div class="resume-container">
-    <div>
-      <h2 class="resume-title">
-        {{ resumeData.name }}
-      </h2>
-      <p class="resume-overview">{{ resumeData.overview }}</p>
-    </div>
-    <div>
-      <span>{{ resumeData.email }}</span>
-    </div>
+    <h2 class="resume-container-title">
+      {{ resumeData.name }}
+    </h2>
+    <span class="resume-container-overview">{{ resumeData.overview }}</span>
   </div>
-
+  <hr />
   <div class="resume-container">
-    <h3 class="resume-subtitle">Experience</h3>
+    <h3 class="resume-container-subtitle">Experience</h3>
     @for(exp of resumeData.experience; track exp.name) {
     <div class="resume-container-experience">
-      <h4 class="resume-container-experience-name">{{ exp.name }}</h4>
-      <p>{{ exp.location }}</p>
-      <p>{{ exp.position }}</p>
-      <p>{{ exp.date }}</p>
-      <ul>
+      <div class="resume-container-experience-container">
+        <div class="resume-container-experience-details">
+          <h4 class="resume-container-experience-details-name">
+            {{ exp.name }}
+          </h4>
+          <span class="special-text highlight">{{ exp.position }}</span>
+        </div>
+        <div class="resume-container-experience-details">
+          <span>{{ exp.location }}</span>
+          <span class="special-text">{{ exp.date }}</span>
+        </div>
+      </div>
+      <ul class="resume-container-experience-list">
         @for(des of exp.description; track des) {
         <li>{{ des }}</li>
         }
@@ -27,33 +30,22 @@
     </div>
     }
   </div>
-
+  <hr />
   <div class="resume-container">
-    <h3 class="resume-subtitle">Education</h3>
+    <h3 class="resume-container-subtitle">Education</h3>
     @for(edu of resumeData.education; track edu.name) {
     <div class="resume-container-education">
       <h4 class="resume-container-education-name">{{ edu.name }}</h4>
-      <p>{{ edu.location }}</p>
-      <p>{{ edu.position }}</p>
-      <p>{{ edu.date }}</p>
-      <p>{{ edu.description }}</p>
+      <span class="special-text">{{ edu.position }}</span>
+      <div class="resume-container-experience-details">
+        <span>{{ edu.location }}</span>
+        <span class="special-text">{{ edu.date }}</span>
+      </div>
+      <span>{{ edu.description }}</span>
     </div>
     }
   </div>
-
-  <div class="resume-container">
-    <h3 class="resume-subtitle">Skills</h3>
-    @for(skills of resumeData.skills; track skills) {
-    <h4>{{ skills.name }}</h4>
-    <p>{{ skills.skill }}</p>
-    }
-  </div>
-
-  <div class="resume-container">
-    <h3 class="resume-subtitle">Languages</h3>
-    {{ resumeData.languages }}
-  </div>
-
+  <hr />
   <button
     class="container-btn"
     [ngClass]="{ lightMode: currThemeDark.theme.currThemeDark }"

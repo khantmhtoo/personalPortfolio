@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectService } from '../services/project.service';
-import { MCProject } from '../../../fixtures/testFakeDataType';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { MCProject } from '../models/project.model';
 
 @Component({
   selector: 'app-projectlist',
@@ -31,7 +31,7 @@ export class ProjectlistComponent implements OnInit, OnDestroy {
     this._projectService.getProjectList();
     this.projectListSubs = this._projectService.$projectList.subscribe(
       (data: any) => {
-        this.projectList = data;
+        this.projectList = data.Project;
       }
     );
   }

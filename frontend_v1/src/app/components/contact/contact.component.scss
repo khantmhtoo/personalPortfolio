@@ -1,3 +1,4 @@
+@import "../../cores/styles/default.scss";
 .contact {
   margin-block: 1rem;
 
@@ -19,67 +20,24 @@
       }
     }
     &-btn {
-      font-family: "Nunito Sans", sans-serif;
-      letter-spacing: 1px;
-      padding: 0.25rem 0.5rem;
-      outline: none;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      width: 5rem;
-      font-weight: bold;
-      transform: translateY(0);
-      box-shadow: 0 3px 0 white;
-      font-size: .8rem;
-
+      @include btn;
       &:hover {
-        &::before {
+        &::before, &::after  {
           height: 10%;
           opacity: 1;
         }
-        &::after {
-          height: 10%;
-          opacity: 1;
-        }
-      }
-
-      &:active {
-        box-shadow: 0 0 0;
-        transform: translateY(3px);
       }
 
       &::before {
-        position: absolute;
-        background-color: lightcoral;
-        width: 100%;
-        height: 100%;
-        content: "";
-        opacity: 0.1;
-        top: 0;
-        left: 0;
-        transition: all ease-in-out 0.2s;
+        @include btnHover(0, auto, 0);
       }
-
       &::after {
-        position: absolute;
-        background-color: lightcoral;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        content: "";
-        bottom: 0;
-        left: 0;
-        transition: all ease-in-out 0.2s;
+        @include btnHover(auto, 0, 0);
       }
     }
 
     &-btn.lightMode {
-      box-shadow: 0 3px 0 black;
-
-      &:active {
-        box-shadow: 0 0 0;
-        transform: translateY(3px);
-      }
+      @include btn(black);
     }
   }
 }

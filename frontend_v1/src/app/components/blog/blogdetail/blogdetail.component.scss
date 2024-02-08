@@ -1,50 +1,28 @@
+@import "../../../cores/styles/default.scss";
+
 .container {
   &-intro {
-    margin-bottom: 1rem;
-    &-title {
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    &-sub {
-      display: flex;
-      justify-content: space-between;
-      &-title {
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-
-      &-content {
-        letter-spacing: 1px;
-      }
-    }
+    @include defaultIntro;
   }
 
   &-content {
     &-detail {
-      border: 1px solid;
-      padding-bottom: 1rem;
-      border: 1px solid #2c3e50;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      @include detailsDefault;
 
       &:nth-child(odd) {
         background-color: #34495e;
       }
 
       &-img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 0.5rem;
+        @include detailsImgDefault(auto);
       }
 
       &-title {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
       }
 
       &-info {
-        letter-spacing: .5px;
+        letter-spacing: $letter-space-info;
       }
     }
 
@@ -61,49 +39,13 @@
   }
 
   &-tags {
-    margin-bottom: 1rem;
-    &-title {
-      margin-bottom: 0.5rem;
-    }
-    &-list {
-      list-style: none;
-      display: flex;
-
-      &-item {
-        font-size: 0.9rem;
-        border-radius: 5px;
-        margin-right: 0.5rem;
-        border: 1px solid;
-        padding: 0.25rem 0.5rem;
-      }
-    }
+    @include defaultTagStyles;
   }
 
   &-btn {
-    font-family: "Nunito Sans", sans-serif;
-    letter-spacing: 1px;
-    padding: 0.25rem 0.5rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    width: 5rem;
-    font-weight: bold;
-    transform: translateY(0);
-    box-shadow: 0 3px 0 white;
-    font-size: 0.8rem;
-
-    &:active {
-      box-shadow: 0 0 0;
-      transform: translateY(3px);
-    }
+    @include btn;
   }
   &-btn.lightMode {
-    box-shadow: 0 3px 0 black;
-
-    &:active {
-      box-shadow: 0 0 0;
-      transform: translateY(3px);
-    }
+    @include btn(black);
   }
 }
