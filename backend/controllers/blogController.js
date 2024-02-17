@@ -1,21 +1,25 @@
-const blogService = require();
+// const blogService = require();
 
 exports.index = async (req, res) => {
-  try {
-  } catch {}
+  // try {
+  // } catch {}
+  res.send("This is blog API GET");
 };
 
 exports.store = async (req, res) => {
-  try {
-  } catch {}
+  // try {
+  // } catch {}
+  res.send("This is blog API store");
 };
 
-exports.put = async (req, res) => {
-  try {
-  } catch {}
+exports.update = async (req, res) => {
+  // try {
+  // } catch {}
+  res.send("This is blog API received update");
 };
 
-exports.delete = async (req, res) => {
-  try {
-  } catch {}
+exports.destroy = async (req, res) => {
+  // try {
+  // } catch {}
+  res.send("This is blog API Destorty");
 };
