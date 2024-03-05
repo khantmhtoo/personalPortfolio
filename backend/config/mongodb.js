@@ -4,8 +4,9 @@ require("dotenv").config();
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 const cluster = process.env.DB_CLUSTER;
+const database = process.env.DB_DATABASE;
 
-const uri = `mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
   try {

@@ -1,4 +1,4 @@
-// const connectDB = require("./config/mongodb");
+const connectDB = require("./config/mongodb");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
@@ -11,6 +11,7 @@ const path = require("path");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+connectDB();
 
 // ----------------
 // Routes

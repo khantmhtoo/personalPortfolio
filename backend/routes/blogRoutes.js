@@ -9,7 +9,7 @@ router.get("/", blogController.index);
 router.post("/", blogController.store);
 
 // Update a auth
-router.put("/:id", blogController.update);
+router.patch("/:id", blogController.update);
 
 // Delete a auth
 router.delete("/:id", blogController.destroy);

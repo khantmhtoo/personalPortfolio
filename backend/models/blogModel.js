@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const content = new Schema({
-  section: String,
-  description: Schema.Types.Mixed,
+  sectionTitle: String,
+  description: String,
   visuals: String,
   subContent: Schema.Types.Mixed,
 });
@@ -14,9 +14,9 @@ const blogSchema = new mongoose.Schema({
   author: { type: String, required: true },
   date: { type: String, required: true },
   content: [content],
-  tags: [String],
+  tags: { type: [String], required: true },
 });
 
-const Blog = mongoose.model("Blog", blogSchema);
+const Blog = mongoose.model("blogs", blogSchema);
 
 module.exports = Blog;
