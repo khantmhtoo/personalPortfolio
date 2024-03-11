@@ -25,6 +25,7 @@ Temporary Placement For Deployed Site:::
 ### Preview Of The Portfolio
 ![Desktop Version](imagesOther/ssfull.png)
 ![Mobile Version](imagesOther/ssmobile.png)
+
 ---
 
 ### Current Features
@@ -41,5 +42,4 @@ Temporary Placement For Deployed Site:::
 1. Re-design Application
 2. Change up the navigation system
 3. Polish up the SCSS
----
 

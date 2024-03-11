@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { testFakeDataBlog } from '../../../fixtures/testFakeData';
 import { MBlog, MCBlog } from '../models/blog.model';
+import { ApiService } from '../../../cores/services/api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +15,14 @@ export class BlogService {
   private selectedBlogBS = new BehaviorSubject(this.selectedBlog);
   public $selectedBlog = this.selectedBlogBS.asObservable();
 
+  _api = inject(ApiService)
+
   getBlogList() {
-    this.blogList.getBlogs(testFakeDataBlog)
-    this.blogListBS.next(this.blogList);
+    this._api.getData('blog').subscribe((data: any) => {
+      this.blogList.getBlogs(data)
+      this.blogListBS.next(this.blogList);
+    })
+
   }
 
   getBlog(id: string) {

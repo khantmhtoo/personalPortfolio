@@ -1,5 +1,5 @@
 export type MCBlog = {
-  id: string;
+  _id?: any;
   blogTitle: string;
   summary: string;
   author?: string;
@@ -28,7 +28,7 @@ export class MBlog {
   }
 
   getBlogById(id: string) {
-    return this.blogList.find((blog: MCBlog) => blog.id === id);
+    return this.blogList.find((blog: MCBlog) => blog._id === id);
   }
 
   deleteBlog(id: string) {}

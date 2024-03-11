@@ -18,11 +18,11 @@ connectDB();
 // ----------------
 const blogRoutes = require("./routes/blogRoutes");
 const contactRoutes = require("./routes/contactRoutes");
-// const projectRoutes = require("./routes/projectRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 
 app.use("/api/blog", blogRoutes);
 app.use("/api/contact", contactRoutes);
-// app.use("/api/project", projectRoutes);
+app.use("/api/project", projectRoutes);
 
 // This is using the static HTML from the public folder probably can redesign it a bit later
 app.use(express.static(path.join(__dirname, "public")));

@@ -19,6 +19,7 @@ export class BloglistComponent implements OnInit, OnDestroy {
   blogListSubs!: Subscription;
 
   onClick(id: string) {
+    console.log(id)
     this._router.navigate([`blog/details/${id}`]);
   }
 
