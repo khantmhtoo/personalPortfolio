@@ -14,7 +14,7 @@ const blogSchema = new mongoose.Schema({
   author: { type: String, required: true },
   date: { type: String, required: true },
   content: [content],
-  tags: { type: [String], required: true },
+  techStack: { type: [String], required: true },
 });
 
 const Blog = mongoose.model("blogs", blogSchema);

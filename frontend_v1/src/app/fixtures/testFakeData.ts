@@ -6,7 +6,7 @@ export const testFakeDataProject: MCProject[] = [
   {
     id: '000000001',
     projectTitle: 'Awesome Task Manager',
-    overallSummary: `The Awesome Task Manager streamlines task management with a dynamic dashboard, integrating social feeds and real-time updates for effortless organization. Stay connected with friends while managing tasks seamlessly.`,
+    summary: `The Awesome Task Manager streamlines task management with a dynamic dashboard, integrating social feeds and real-time updates for effortless organization. Stay connected with friends while managing tasks seamlessly.`,
     status: 'Completed',
     position: 'Engineer UI',
     company: 'N/A',

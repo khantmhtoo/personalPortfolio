@@ -1,7 +1,7 @@
 export type MCProject = {
   id: string;
   projectTitle: string;
-  overallSummary: string;
+  summary: string;
   status: string;
   position: string;
   company: string;

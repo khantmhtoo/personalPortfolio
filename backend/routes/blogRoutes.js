@@ -5,13 +5,13 @@ const blogController = require("../controllers/blogController");
 // Get all blogs
 router.get("/", blogController.index);
 
-// Create a new auth
+// Create a new blog
 router.post("/", blogController.store);
 
-// Update a auth
+// Update a blog
 router.patch("/:id", blogController.update);
 
-// Delete a auth
+// Delete a blog
 router.delete("/:id", blogController.destroy);
 
 module.exports = router;
