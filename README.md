@@ -15,6 +15,13 @@ This is a personal portfolio which highlights some of the technically skills I'v
         <li>PrimeNG</li>
         <li>Firebase (Hosting) </li>
     </ul>
+
+    In the Backend:
+    <ul>
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>MongoDB</li>
+    </ul>
 </details>
 
 ### Current Features
